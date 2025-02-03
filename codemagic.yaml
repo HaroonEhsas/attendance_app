@@ -1,0 +1,22 @@
+workflows:
+  android-workflow:
+    name: Android Build
+    environment:
+      groups:
+        - keystore  # Reference your code signing group
+      flutter: stable
+      xcode: latest  # For iOS builds (optional)
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+    scripts:
+      - flutter pub get
+      - flutter build apk --release
+    artifacts:
+      - build/app/outputs/apk/release/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - haroo.khoshb11@gmail.com
