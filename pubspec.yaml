@@ -1,0 +1,23 @@
+name: attendance_app
+description: A fresh attendance app with biometric auth and location tracking.
+
+# Environment configuration (added)
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  local_auth: ^2.1.5    # Fingerprint authentication
+  geolocator: ^9.0.2    # Location tracking
+  sqflite: ^2.2.0+4     # Local database
+  path: ^1.8.2          # File path handling
+  provider: ^6.0.0      # State management
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
